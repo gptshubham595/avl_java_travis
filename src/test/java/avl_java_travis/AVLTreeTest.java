@@ -83,7 +83,7 @@ public class AVLTreeTest {
 		tree.insert(5);
 		
 
-		assertNotNull(tree.fing(5));
+		assertNotNull(tree.find(5));
 	}
 
 	
@@ -94,7 +94,7 @@ public class AVLTreeTest {
 		tree.insert(5);
 		
 
-		assertNull(tree.fing(10));
+		assertNull(tree.find(10));
 	}
 
 
