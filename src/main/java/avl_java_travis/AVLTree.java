@@ -1,4 +1,4 @@
-package avl_java_travis;
+package main.java.avl_java_travis;
 
 public class AVLTree {
 
@@ -11,6 +11,7 @@ public class AVLTree {
 		Node(int key) {
 			this.key = key;
 		}
+
 	}
 
 	private Node root;
@@ -26,8 +27,8 @@ public class AVLTree {
 		return current;
 	}
 
-	public void insert(int key) {
-		root = insert(root, key);
+	public void insert(int key2) {
+		root = insert(root, key2);
 	}
 
 	public void delete(int key) {

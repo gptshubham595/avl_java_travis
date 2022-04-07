@@ -1,10 +1,12 @@
-package avl_java_travis;
+package test.java.avl_java_travis;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class avlJunitTest {
+import main.java.avl_java_travis.AVLTree;
+
+public class AVLTreeTest {
 
 	@Test
 	public void testRoot() {
@@ -16,8 +18,7 @@ public class avlJunitTest {
 		for (int i = 0; i < array.length; i++) {
 			tree.insert(array[i]);
 		}
-
-		assertEquals(tree.getRoot().key, 30);
+		assertEquals(tree.getRoot(), tree.find(30));
 	}
 
 	@Test
