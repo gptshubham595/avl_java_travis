@@ -4,7 +4,7 @@ jdk:
   - openjdk8
 
 script: 
-  - "mvn install"
+  - ant build
   - "mvn cobertura:cobertura"
 
 after_success:
