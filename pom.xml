@@ -5,7 +5,7 @@
 	<groupId>avl_java_travis</groupId>
 	<artifactId>avl_java_travis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	
 	<name>avl_java_travis</name>
 	<dependencies>
 		<dependency>
@@ -34,13 +34,6 @@
 					<execution>
 						<goals>
 							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>build-jar-with-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
 						</goals>
 					</execution>
 					<execution>
