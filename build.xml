@@ -30,11 +30,11 @@
         <path refid="avl_java_travis.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
-    <path id="run.AVLTreeTest.testTreeDelete.classpath">
+    <path id="run.AVLTreeTest.testTreeBalance.classpath">
         <path refid="avl_java_travis.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
-    <path id="run.AVLTreeTest.testTreeBalance.classpath">
+    <path id="run.AVLTreeTest.testTreeDelete.classpath">
         <path refid="avl_java_travis.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
@@ -92,15 +92,6 @@
             <classpath refid="run.AVLTreeTest.classpath"/>
         </junit>
     </target>
-    <target name="AVLTreeTest.testTreeDelete">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.AVLTreeTest.testTreeDelete.classpath"/>
-        </junit>
-    </target>
     <target name="AVLTreeTest.testTreeBalance">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
@@ -108,6 +99,15 @@
             <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.AVLTreeTest.testTreeBalance.classpath"/>
+        </junit>
+    </target>
+    <target name="AVLTreeTest.testTreeDelete">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.AVLTreeTest.testTreeDelete.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
