@@ -116,7 +116,7 @@ public class AVLTreeTest {
 	public void testTreeDelete2() {
 		// this array in this order allows to pass in all branches
 		// of the insertion algorithm
-		int[] array = { 10, 20, 30, 40, 50, 25 };
+		int[] array = { 1012, 2012, 3012, 4012, 5012, 2512 };
 		AVLTree tree = new AVLTree();
 
 		for (int i = 0; i < array.length; i++) {
@@ -131,7 +131,7 @@ public class AVLTreeTest {
 	public void testTreeDelete3() {
 		// this array in this order allows to pass in all branches
 		// of the insertion algorithm
-		int[] array = { 10, 20, 30, 40, 50, 25 };
+		int[] array = { 103, 203, 303, 403, 503, 253 };
 		AVLTree tree = new AVLTree();
 
 		for (int i = 0; i < array.length; i++) {
@@ -145,7 +145,7 @@ public class AVLTreeTest {
 	public void testTreeBalance() {
 		// this array in this order allows to pass in all branches
 		// of the insertion algorithm
-		int[] array = { 10, 20, 30, 40, 50, 25 };
+		int[] array = { 120, 220, 320, 420, 520, 250 };
 		AVLTree tree = new AVLTree();
 
 		for (int i = 0; i < array.length; i++) {
@@ -159,7 +159,7 @@ public class AVLTreeTest {
 	public void testTreeBalance2() {
 		// this array in this order allows to pass in all branches
 		// of the insertion algorithm
-		int[] array = { 10, 20, 30, 40, 50, 25 };
+		int[] array = { 110, 220, 330, 440, 550, 250 };
 		AVLTree tree = new AVLTree();
 
 		for (int i = 0; i < array.length; i++) {
