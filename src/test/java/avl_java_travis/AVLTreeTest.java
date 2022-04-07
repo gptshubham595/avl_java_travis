@@ -112,34 +112,6 @@ public class AVLTreeTest {
 		assertEquals(tree.find(10), null);
 	}
 
-	@Test
-	public void testTreeDelete2() {
-		// this array in this order allows to pass in all branches
-		// of the insertion algorithm
-		int[] array = { 1012, 2012, 3012, 4012, 5012, 2512 };
-		AVLTree tree = new AVLTree();
-
-		for (int i = 0; i < array.length; i++) {
-			tree.insert(array[i]);
-		}
-		tree.delete(30);
-		assertNotNull(tree.find(10));
-//		assertEquals(tree.find(10), null);
-	}
-
-	@Test
-	public void testTreeDelete3() {
-		// this array in this order allows to pass in all branches
-		// of the insertion algorithm
-		int[] array = { 103, 203, 303, 403, 503, 253 };
-		AVLTree tree = new AVLTree();
-
-		for (int i = 0; i < array.length; i++) {
-			tree.insert(array[i]);
-		}
-		tree.delete(10);
-		assertNotNull(tree.find(20));
-	}
 
 	@Test
 	public void testTreeBalance() {
