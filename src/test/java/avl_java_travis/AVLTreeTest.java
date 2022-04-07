@@ -78,25 +78,21 @@ public class AVLTreeTest {
 
 	@Test
 	public void testTreeInsert() {
-		
+
 		AVLTree tree = new AVLTree();
 		tree.insert(5);
-		
 
 		assertNotNull(tree.find(5));
 	}
 
-	
 	@Test
 	public void testTreeInsert2() {
-		
+
 		AVLTree tree = new AVLTree();
 		tree.insert(5);
-		
-		
-		assertEquals(tree.find(10),null);
-	}
 
+		assertEquals(tree.find(10), null);
+	}
 
 	@Test
 	public void testTreeDelete() {
@@ -112,6 +108,19 @@ public class AVLTreeTest {
 		assertEquals(tree.find(10), null);
 	}
 
+	@Test
+	public void testTreeDelete2() {
+		// this array in this order allows to pass in all branches
+		// of the insertion algorithm
+		int[] array = { 1032, 2032, 3032, 4032, 5032, 2532 };
+		AVLTree tree = new AVLTree();
+
+		for (int i = 0; i < array.length; i++) {
+			tree.insert(array[i]);
+		}
+		tree.delete(33);
+		assertEquals(tree.find(33), null);
+	}
 
 	@Test
 	public void testTreeBalance() {
