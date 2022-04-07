@@ -93,8 +93,8 @@ public class AVLTreeTest {
 		AVLTree tree = new AVLTree();
 		tree.insert(5);
 		
-
-		assertNull(tree.find(10));
+		
+		assertEquals(tree.find(10),null);
 	}
 
 
