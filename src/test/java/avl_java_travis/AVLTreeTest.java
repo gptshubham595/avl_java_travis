@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import main.java.avl_java_travis.AVLTree;
 
-
 public class AVLTreeTest {
 
 	@Test
@@ -53,7 +52,7 @@ public class AVLTreeTest {
 	public void testFind4() {
 		// this array in this order allows to pass in all branches
 		// of the insertion algorithm
-		int[] array = { 9, 19, 29, 39, 49, 24 ,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,20,21,22};
+		int[] array = { 9, 19, 29, 39, 49, 24 ,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22};
 		AVLTree tree = new AVLTree();
 
 		for (int i = 0; i < array.length; i++) {
