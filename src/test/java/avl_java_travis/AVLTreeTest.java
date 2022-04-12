@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import main.java.avl_java_travis.AVLTree;
 
+
 public class AVLTreeTest {
 
 	@Test
