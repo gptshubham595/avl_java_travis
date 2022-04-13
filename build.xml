@@ -5,61 +5,34 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="avl_java_travis">
     <property environment="env"/>
-    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="Maven Dependencies.libraryclasspath">
-        <pathelement location="C:/Users/ASUS/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar"/>
-        <pathelement location="C:/Users/ASUS/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-    </path>
     <path id="JUnit 4.libraryclasspath">
         <pathelement location="C:/Users/ASUS/.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
         <pathelement location="C:/Users/ASUS/.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
     </path>
     <path id="avl_java_travis.classpath">
-        <pathelement location="target/classes"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
+        <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
-    <path id="run.avlJunitTest.classpath">
-        <path refid="avl_java_travis.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.AVLTreeTest.classpath">
-        <path refid="avl_java_travis.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.AVLTreeTest.testTreeBalance.classpath">
-        <path refid="avl_java_travis.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.AVLTreeTest.testTreeDelete.classpath">
-        <path refid="avl_java_travis.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.AVLTreeTest.testTreeHeight3.classpath">
-        <path refid="avl_java_travis.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
     <target name="init">
-        <mkdir dir="target/classes"/>
-        <copy includeemptydirs="false" todir="target/classes">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
     </target>
     <target name="clean">
-        <delete dir="target/classes"/>
+        <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="avl_java_travis.classpath"/>
         </javac>
@@ -77,58 +50,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="avlJunitTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.avlJunitTest.classpath"/>
-        </junit>
-    </target>
-    <target name="AVLTreeTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.AVLTreeTest.classpath"/>
-        </junit>
-    </target>
-    <target name="AVLTreeTest.testTreeBalance">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.AVLTreeTest.testTreeBalance.classpath"/>
-        </junit>
-    </target>
-    <target name="AVLTreeTest.testTreeDelete">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.AVLTreeTest.testTreeDelete.classpath"/>
-        </junit>
-    </target>
-    <target name="AVLTreeTest.testTreeHeight3">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.avl_java_travis.AVLTreeTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.AVLTreeTest.testTreeHeight3.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
     </target>
 </project>
