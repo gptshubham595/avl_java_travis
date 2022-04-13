@@ -231,5 +231,14 @@ public class AVLTreeTest {
 		tree.insert(10);
 		assertEquals(tree.find(10), tree.getRoot());
 	}
-	
+
+
+	@Test
+	public void testingInsertDupFunction() {
+		AVLTree tree = new AVLTree();
+		tree.insert(10);
+		tree.insert(10);
+		assertEquals(tree.find(10), tree.getRoot());
+	}
+
 }
