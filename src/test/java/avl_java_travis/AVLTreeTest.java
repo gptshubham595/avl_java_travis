@@ -198,5 +198,38 @@ public class AVLTreeTest {
 
 		assertEquals(tree.getBalance(tree.find(60)), 0);
 	}
+	
+	@Test
+	public void testingEqualsItself() {
+		AVLTree tree = new AVLTree();
+		assertEquals(tree, tree);
+	}
 
+	@Test
+	public void testingDefaultConstructor() {
+		AVLTree tree = new AVLTree();
+		assertNotNull(tree);
+	}
+
+	@Test
+	public void testingIntegerConstructor() {
+		AVLTree tree = new AVLTree();
+		tree.insert(5);
+		assertEquals(tree.getRoot(), tree.find(5));
+	}
+
+	@Test
+	public void testingGetFunction() {
+		AVLTree tree = new AVLTree();
+		tree.insert(10);
+		assertNotNull(tree.getRoot());
+	}
+
+	@Test
+	public void testingInsertFunction() {
+		AVLTree tree = new AVLTree();
+		tree.insert(10);
+		assertEquals(tree.find(10), tree.getRoot());
+	}
+	
 }
