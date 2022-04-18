@@ -5,6 +5,7 @@ jdk:
 
 script: 
   - "mvn cobertura:cobertura"
+  - java -jar evosuite-1.0.6.jar -class main.java.avl_java_travis.AVLTree -projectCP target/classes
 
 
 after_success:
